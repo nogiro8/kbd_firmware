@@ -1,0 +1,11 @@
+
+git clone https://github.com/nogiro8/kbd_firmware.git
+cd kbd_firmware
+make 
+
+make qmk-clean kb=crkbd
+make qmk-init kb=crkbd
+cp -pR keyboards/crkbd/qmk/qmk_firmware/keymaps/{via,nogiro8}
+kb=crkbd kr=rev4/standard km=nogiro8 make qmk-compile
+kb=crkbd kr=rev4/standard km=nogiro8 make qmk-flash
+
